@@ -1,29 +1,36 @@
 #include <cs50.h>
 #include <stdio.h>
 
-
 int main(void)
 {   
-    int n; // declaration of integer n
-    do     // do while loop for getting the height between 1 and 8
+    int n; // integer for height
+    do     // do while loop for height value greater than equal to one or less than equal to 8
     {
-        n = get_int("Height: ");
+        n = get_int("Height: "); 
     }
     while (n < 1 || n > 8);
+    
+    int w = n; // another variable for storing height value
 
-    int w = n; // declaring and storing height value into another variable for loop 
-    for (int i = 0; i < w; i++) // main loop for the pattern
+    for (int i = 0; i < w; i++) // main for loop
     {
         for (int j = 1; j < n; j++)
         {
-            printf(" ");    // space
-        } 
+            printf(" "); //for space
+        }
         for (int k = 0; k <= i; k++)
         {
-            printf("#");    // hash
+            printf("#"); //hashes
         }
-        printf("\n");
-        n--;        // decrementing n
+
+        printf("  "); //more space
+
+        for (int l = 0; l <= i; l++)
+        {
+            printf("#");
+        }
+        printf("\n"); //new line
+        n--; // decrement of n
     }
-}     
-                
+    
+}
